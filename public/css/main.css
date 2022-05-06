@@ -1,0 +1,272 @@
+.container {
+  width: 1140px;
+}
+
+body {
+  background-color: white;
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.header {
+  height: 50px;
+  display: flex;
+  justify-content: flex-end;
+  background-color: cadetblue;
+}
+.header form {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  padding-right: 20px;
+}
+.header a {
+  display: flex;
+  align-self: center;
+  color: white;
+  text-decoration: none;
+}
+
+.borrow-form {
+  background-color: cadetblue;
+  border-radius: 20px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.borrow-form h1 {
+  text-align: center;
+  color: white;
+  padding-top: 20px;
+}
+.borrow-form form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 0 40px 40px 40px;
+}
+.borrow-form form label, .borrow-form form input {
+  width: 100%;
+  color: white;
+  font-weight: 900;
+  font-family: "Inter", sans-serif;
+}
+.borrow-form form label[type=submit], .borrow-form form input[type=submit] {
+  display: block;
+  margin: auto;
+  width: 30%;
+  margin-top: 32px;
+  background-color: white;
+  border: 1px solid #7fb1b3;
+  color: cadetblue;
+}
+.borrow-form form label[type=submit]:hover, .borrow-form form input[type=submit]:hover {
+  background-color: cadetblue;
+  border: 1px solid white;
+  color: white;
+}
+.borrow-form form label[type=datetime-local], .borrow-form form input[type=datetime-local] {
+  color-scheme: dark;
+}
+.borrow-form form label {
+  margin-block: 20px 4px;
+  font-size: 20px;
+}
+.borrow-form form label:first-child {
+  margin-block: 0 4px;
+}
+.borrow-form form select {
+  width: 50%;
+  padding-block: 12px;
+  border: none;
+  border-bottom: 1px solid white;
+  background-color: cadetblue;
+  color: white;
+  outline: none;
+  font-weight: 600;
+}
+.borrow-form form select:focus {
+  border: 0;
+  border-bottom: 1px solid white;
+}
+.borrow-form form select option {
+  outline: none;
+  font-weight: 600;
+  color: white;
+}
+.borrow-form form .item-list {
+  display: flex;
+  flex-direction: column;
+}
+.borrow-form form .item-list .item {
+  margin-block: 4px;
+  color: white;
+}
+.borrow-form form .item-list .item input {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.borrow-form form input {
+  padding-block: 12px;
+  border: none;
+  border-bottom: 1px solid white;
+  outline: none;
+  background-color: cadetblue;
+}
+
+#item {
+  margin: auto;
+}
+#item h1 {
+  text-align: center;
+  color: cadetblue;
+  margin-bottom: 40px;
+}
+#item .item-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  gap: 15px;
+}
+#item .item-list .item {
+  width: 350px;
+  height: 480px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+#item .item-list .item img {
+  width: 350px;
+  height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 20px;
+}
+#item .item-list .item .title {
+  display: block;
+  font-weight: 700;
+}
+#item .item-list .item .author {
+  display: block;
+  font-style: italic;
+  margin-block: 8px;
+  font-size: 12px;
+}
+#item .item-list .item button {
+  display: block;
+  text-align: center;
+  margin: auto;
+  color: white;
+  background-color: cadetblue;
+  padding: 8px 12px;
+  border: 0;
+  cursor: pointer;
+}
+#item .item-list .item button:hover {
+  background-color: #7fb1b3;
+}
+
+footer {
+  margin-top: 40px;
+  width: 100vw;
+  background-color: cadetblue;
+  height: 200px;
+}
+
+.cart {
+  position: fixed;
+  top: 120px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: cadetblue;
+  cursor: pointer;
+}
+.cart .logo svg {
+  fill: white;
+  width: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.cart .qty {
+  position: absolute;
+  color: white;
+  background-color: cadetblue;
+  background-position: center;
+  font-size: 10px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  text-align: center;
+  font-weight: 900;
+  border: 2px solid white;
+  bottom: 6px;
+  right: 8px;
+}
+.cart .cart-items {
+  position: absolute;
+  right: 60px;
+  width: 0;
+  max-height: 0;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  background-color: white;
+  border: 1px solid cadetblue;
+  padding: 0;
+  cursor: default;
+}
+.cart .cart-items .item {
+  width: 300px;
+  display: flex;
+  margin-bottom: 12px;
+  align-items: center;
+  justify-content: space-between;
+}
+.cart .cart-items .item img {
+  width: 40px;
+  height: 40px;
+}
+.cart .cart-items .item .title {
+  width: 220px;
+}
+.cart .cart-items .item .remove {
+  width: 20px;
+  max-height: 100px;
+  cursor: pointer;
+}
+.cart .cart-items .item .remove svg {
+  position: static;
+  width: 20px;
+  height: 20px;
+  fill: cadetblue;
+  color: cadetblue;
+}
+.cart .cart-items .item:last-child {
+  margin-bottom: 0;
+}
+.cart .cart-items .check-out {
+  width: 30%;
+  background-color: cadetblue;
+  color: white;
+  padding: 6px 12px;
+  margin: auto;
+  justify-content: center;
+  cursor: pointer;
+}
+.cart .cart-items .check-out:hover {
+  background-color: #7fb1b3;
+}
+.cart:hover .cart-items {
+  width: 300px;
+  max-height: 500px;
+  padding: 12px;
+}
